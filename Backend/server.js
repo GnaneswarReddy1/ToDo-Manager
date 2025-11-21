@@ -4,7 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 
-const connectDB = require('./config/db'); // your MongoDB connection
+const connectDB = require('./config/db'); // MongoDB connection
 const authRoutes = require('./routes/auth');
 const taskRoutes = require('./routes/tasks');
 const aiRoutes = require('./routes/ai');
