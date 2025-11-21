@@ -1,0 +1,11 @@
+# Node modules (never commit them)
+backend/node_modules/
+frontend/node_modules/
+
+# Environment variables (secrets)
+backend/.env
+frontend/.env
+
+# Optional: logs and temporary files
+*.log
+.DS_Store

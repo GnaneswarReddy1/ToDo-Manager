@@ -1,0 +1,294 @@
+html {
+  overflow-y: scroll;
+}
+
+/* ------------------------------
+   TASK STYLES
+--------------------------------*/
+/* Strike-through effect for completed tasks */
+.task.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+  background-color: #e0f0ff;
+  transition: all 0.4s ease;
+}
+
+/* Subtle slide animation when moving tasks between panels */
+.task.moving-to-completed {
+  transform: translateX(20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.task.moving-to-active {
+  transform: translateX(-20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+/* Default task card */
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: #f7f7f7;
+  transition: all .2s ease;
+}
+
+.task:hover {
+  background: #efefef;
+}
+
+.task div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ------------------------------
+   DASHBOARD CONTAINER
+--------------------------------*/
+.dashboard-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* ------------------------------
+   TOP NAV TABS
+--------------------------------*/
+.dashboard-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  background: #fff;
+  padding: 8px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 1px;
+  z-index: 1000;
+}
+
+.dashboard-tabs button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #eaeaea;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all .25s ease;
+}
+
+.dashboard-tabs button.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Ensure spacing after sticky tabs */
+.dashboard-container > *:not(.dashboard-tabs) {
+  margin-top: 12px;
+}
+
+/* ------------------------------
+   ADD PANEL (OPEN/CLOSE ANIMATION)
+--------------------------------*/
+.add-panel {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* When tab is Add */
+.add-panel.open {
+  display: block;
+}
+
+/* When tab is Active / Completed */
+.add-panel.closed {
+  display: none;
+}
+
+/* WHITE CARD INSIDE ADD PANEL */
+.manual-add-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  min-height: 350px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  overflow: visible;
+}
+
+/* ------------------------------
+   INPUTS / TEXTAREAS
+--------------------------------*/
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24,144,255,0.2);
+}
+
+.textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* ------------------------------
+   SEARCH / SORT / FILTER ROW
+--------------------------------*/
+.filter-row {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.filter-row .input,
+.filter-row select {
+  min-height: 38px;
+  box-sizing: border-box;
+}
+
+.filter-row .search {
+  flex: 0 0 50%;
+}
+
+.filter-row .sort {
+  flex: 0 0 20%;
+}
+
+.filter-row .filter {
+  flex: 0 0 20%;
+}
+
+/* ------------------------------
+   BUTTONS
+--------------------------------*/
+.button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all .2s ease;
+}
+
+.button:hover {
+  opacity: .85;
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* ------------------------------
+   AI SUGGESTION MODAL
+--------------------------------*/
+.ai-preview-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  z-index: 2000;
+}
+
+.ai-preview-content {
+  width: 720px;
+  max-width: 100%;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  animation: modalIn .2s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(10px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ------------------------------
+   SMALL STATES
+--------------------------------*/
+.loading-state,
+.error-message,
+.empty-state {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  margin-top: 14px;
+  text-align: center;
+}
+
+/* ------------------------------
+   RESPONSIVE FIXES
+--------------------------------*/
+@media (max-width: 900px) {
+  .dashboard-container {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .add-panel.open {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .ai-preview-modal {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .ai-preview-content {
+    width: 100%;
+    height: 90%;
+    border-radius: 12px 12px 0 0;
+    padding: 18px;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-tabs {
+    flex-direction: column;
+  }
+
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input,
+  .textarea {
+    font-size: 15px;
+  }
+
+  .filter-row .search,
+  .filter-row .sort,
+  .filter-row .filter {
+    flex: 1 1 100%;
+  }
+}
+
