@@ -289,3 +289,4 @@ SmartToDo demonstrates a modern full-stack application with meaningful AI integr
 
 The 48-hour timeframe allowed for a solid implementation of core features while leaving room for the enhanced AI integration and additional polish that would make this a production-ready application.
 
+
