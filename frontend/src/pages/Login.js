@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { authApi, setAuthHeader } from '../api';
 import { useNavigate } from 'react-router-dom';
-import './LoginSignup.css'; // optional: keep your styles
+import './LoginSignup.css'; // optional: styles
 
 export default function Login({ setUser }) {
   const [email, setEmail] = useState(localStorage.getItem('rememberedEmail') || '');
