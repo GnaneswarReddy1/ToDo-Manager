@@ -37,18 +37,18 @@ export default function Signup({ setUser }) {
       return alert('Password is too weak.');
 
     try {
-      // 1️⃣ Clear any old token first
+      // 1️ Clear any old token first
       localStorage.removeItem('smarttodo_token');
       localStorage.removeItem('smarttodo_user');
 
-      // 2️⃣ Signup API call
+      // 2️ Signup API call
       const { token, user } = await authApi.signup({ name, email, password });
 
-      // 3️⃣ Save token & user
+      // 3️ Save token & user
       localStorage.setItem('smarttodo_token', token);
       localStorage.setItem('smarttodo_user', JSON.stringify(user));
 
-      // 4️⃣ Set Axios auth header
+      // 4️ Set Axios auth header
       setAuthHeader(token);
 
       setUser(user);
