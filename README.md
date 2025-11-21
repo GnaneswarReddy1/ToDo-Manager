@@ -76,7 +76,7 @@ SmartToDo is a modern task management application that allows users to create, o
 - **User Collection** - name, email, passwordHash, createdAt
 - **Task Collection** - title, notes, dueDate, priority, tags, completed, userId
 
-## 🤖 AI Integration
+## AI Integration
 
 ### Where AI Was Used
 
@@ -91,7 +91,7 @@ SmartToDo is a modern task management application that allows users to create, o
 - **Context-Aware** - Understands temporal references and common task patterns
 
 
-# 🚀 How I Deployed SmartToDo
+# How I Deployed SmartToDo
 ## Backend Deployment on Render
 
 1. **First, I prepared my repository structure:**
@@ -127,7 +127,7 @@ SmartToDo is a modern task management application that allows users to create, o
    - Clicked "Deploy" and Vercel automatically built and deployed
    - Got my frontend live URL: `https://to-do-manager-scak.vercel.app`
 
-## ✅ Deployment Complete!
+## Deployment Complete!
 That's how I deployed the full-stack application:
 - **Frontend**: Hosted on Vercel at `https://to-do-manager-scak.vercel.app/app`
 - **Backend**: Hosted on Render at `https://todo-manager-gor6.onrender.com`
@@ -135,7 +135,7 @@ That's how I deployed the full-stack application:
 
 The entire process took about 15-20 minutes and both services were live and working together! 🎉
 
-## 🚀 Local Development
+## Local Development
 
 ### Prerequisites
 - Node.js (v16 or higher)
@@ -288,3 +288,4 @@ However, the AI integration is currently **passed in bits and pieces** - meaning
 SmartToDo demonstrates a modern full-stack application with meaningful AI integration. It showcases clean architecture, responsive design, and practical features that enhance user productivity. The application successfully balances traditional task management with innovative AI capabilities, providing a foundation that could be extended into a comprehensive productivity platform.
 
 The 48-hour timeframe allowed for a solid implementation of core features while leaving room for the enhanced AI integration and additional polish that would make this a production-ready application.
+
